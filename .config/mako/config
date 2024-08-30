@@ -1,0 +1,17 @@
+sort=-time
+format=<b>%a:</b> %s\n%b
+margin=5
+background-color=#232136
+text-color=#e0def4
+border-color=#393552
+progress-color=over #2a273f
+anchor=bottom-right
+default-timeout=5000
+font=Fredoka 11
+layer=overlay
+width=300
+height=110
+max-icon-size=64
+
+[urgency=high]
+border-color=#ea9a97

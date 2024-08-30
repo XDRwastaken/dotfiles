@@ -1,0 +1,46 @@
+* {
+  font-family: Fredoka;
+  font-size: 13px;
+  color: #e0def4
+}
+
+window#waybar {
+  background-color: #232136;
+  border-bottom: 1px solid #eb6f92
+}
+
+#workspaces button {
+  background: #232136;
+  padding: 0 12px;
+  border-bottom: 1px solid #eb6f92
+}
+
+#workspaces button.focused {
+  background: #eb6f92;
+  border-bottom: 1px solid #eb6f92
+}
+
+#workspaces button:hover {
+  background: #2a273f;
+  border: 1px solid #eb6f92
+}
+
+#tray {
+  padding-right: 4px;
+  border-right: 2px solid #eb6f92
+}
+
+#pulseaudio,
+#battery,
+#clock,
+#network {
+  padding: 0 5px
+}
+
+#clock {
+  padding-right: 5px
+}
+
+#network {
+  padding-left: 4px
+}

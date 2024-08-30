@@ -1,0 +1,69 @@
+{
+   "position":"bottom",
+   "height":25,
+   "modules-left":[
+      "sway/workspaces"
+   ],
+   "modules-right":[
+      "tray",
+      "network",
+      "battery",
+      "pulseaudio",
+      "clock",
+      "idle_inhibitor"
+   ],
+   "battery":{
+      "states":{
+         "warning":15,
+         "critical":5
+      },
+      "format":"{icon}&#8239;{capacity}%",
+      "format-charging":"{icon}&#8239;{capacity}%",
+      "format-plugged":"{icon}&#8239;{capacity}%",
+      "format-full":"{icon}&#8239;Full",
+      "tooltip":false,
+      "format-icons":[
+         "",
+         "",
+         "",
+         "",
+         ""
+      ]
+   },
+   "clock":{
+      "tooltip-format":"<tt><small>{calendar}</small></tt>",
+      "locale":"C",
+      "format":"&#8239;{:%I:%M}",
+      "format-alt":"&#8239;{:%H:%M}"
+   },
+   "network":{
+      "interval":2,
+      "format-wifi":"&#8239;{signalStrength}%",
+      "format-ethernet":"&#8239;Ethernet",
+      "format-disconnected":"&#8239;Disconnected",
+      "format-disabled":"&#8239;Disabled",
+      "on-click":"kitty .config/waybar/network-manager",
+      "tooltip":false
+   },
+   "pulseaudio":{
+      "format":"{icon}&#8239;{volume}",
+      "format-muted":"&#8239;Muted",
+      "format-icons":{
+         "default":[
+            "",
+            ""
+         ]
+      },
+      "on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "on-click-right":"pavucontrol",
+      "tooltip":false
+   },
+   "idle_inhibitor":{
+      "tooltip":false,
+      "format":"{icon}",
+      "format-icons":{
+         "activated":" ",
+         "deactivated":" "
+      }
+   }
+}
