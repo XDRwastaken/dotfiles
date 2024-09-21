@@ -2,8 +2,8 @@ output * bg ~/.config/sway/Wallpaper/透依.jpg fill
 
 # Output configuration
 ## swaymsg -t get_outputs
-#output HDMI-A-1 res 1366x768 pos 0,0
-#output HEADLESS-1 mode 2460x1080 position 1360,0
+###output HDMI-A-1 res 1366x768 pos 0,0
+###output HEADLESS-1 mode 2460x1080 position 1360,0
 
 # Idle configuration
 exec swayidle -w \
@@ -12,12 +12,10 @@ exec swayidle -w \
    timeout 600 'systemctl suspend'
 
 # Input configuration
-## swaymsg -t get_inputs
-input "1267:12586:ELAN0504:01_04F3:312A_Touchpad" {
+input "type:touchpad" {
    tap enabled
    natural_scroll enabled
    middle_emulation enabled
-   dwt disabled
 }
 
 # Key bindings
@@ -90,34 +88,34 @@ bindsym print exec wl-copy < <(grim -g "$(slurp)" -)
 bindsym Shift+print exec grim -g "$(slurp)" "$(xdg-user-dir PICTURES)"/$(date +'screenshot_%d-%m-%Y-%H%M%S.png')
 
 ## Audio controls
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1%
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 2%+
+bindsym XF86AudioLowerVolume exec wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 2%-
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
 ## Brightness controls
-bindsym XF86MonBrightnessUp exec light -A 1
-bindsym XF86MonBrightnessDown exec light -U 1
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
 
 ## Audio Controls (for when screen is locked)
-bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1%
-bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1%
+bindsym --locked XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 2%+
+bindsym --locked XF86AudioLowerVolume exec wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 2%-
 bindsym --locked XF86AudioPlay exec playerctl play-pause
 bindsym --locked XF86AudioNext exec playerctl next
 bindsym --locked XF86AudioPrev exec playerctl previous
-bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym --locked XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
-## Brightness controls
-bindsym --locked XF86MonBrightnessUp exec light -A 5
-bindsym --locked XF86MonBrightnessDown exec light -U 5
+## Brightness controls (for when screen is locked)
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
 # Status Bar
 bar {
-    swaybar_command waybar
+   swaybar_command waybar
 }
 
 # Window Management

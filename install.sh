@@ -4,7 +4,7 @@ current_dir=$(pwd)
 home_dir="$HOME"
 
 echo "WARNING: Please ensure you have installed the necessary dependencies before running this script."
-echo "Required dependencies: curl, fish, sway, waybar, tofi, kitty, cliphist, swaybg, swayidle, xdg-user-dirs, swaylock, grim, wl-clipboard, slurp, mako, wtype, xdg-utils, autotiling-rs, pavucontrol, xdg-desktop-portal-wlr, polkit-gnome"
+echo "Required dependencies: autotiling-rs, brightnessctl, cliphist, curl, fish, grim, kitty, mako, pavucontrol, polkit-gnome, slurp, sway, swaybg, swayidle, swaylock, tofi, waybar, wl-clipboard, wtype, xdg-desktop-portal-wlr, xdg-user-dirs, xdg-utils"
 echo "Note: to control audio via keyboard or waybar, you need pipewire and wireplumber"
 echo "Do you want to continue? (y/n)"
 read -r response

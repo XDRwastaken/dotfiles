@@ -1,6 +1,6 @@
 {
    "position":"bottom",
-   "height":25,
+   "height": 25,
    "modules-left":[
       "sway/workspaces"
    ],
@@ -13,12 +13,14 @@
       "idle_inhibitor"
    ],
    "battery":{
+      "interval": 5,
       "states":{
-         "warning":15,
-         "critical":5
+         "good": 90,
+         "warning": 15,
+         "critical" :5
       },
       "format":"{icon}&#8239;{capacity}%",
-      "format-charging":"{icon}&#8239;{capacity}%",
+      "format-charging":"&#8239;{capacity}%",
       "format-plugged":"{icon}&#8239;{capacity}%",
       "format-full":"{icon}&#8239;Full",
       "tooltip":false,
@@ -52,9 +54,15 @@
          "default":[
             "",
             ""
-         ]
+         ],
+	   "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": ""
       },
-      "on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "on-click":"wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
       "on-click-right":"pavucontrol",
       "tooltip":false
    },
@@ -62,8 +70,8 @@
       "tooltip":false,
       "format":"{icon}",
       "format-icons":{
-         "activated":" ",
-         "deactivated":" "
+         "activated":" ",
+         "deactivated":" "
       }
    }
 }
