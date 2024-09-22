@@ -8,7 +8,7 @@
       "tray",
       "network",
       "battery",
-      "pulseaudio",
+      "wireplumber",
       "clock",
       "idle_inhibitor"
    ],
@@ -47,7 +47,7 @@
       "on-click":"kitty .config/waybar/network-manager",
       "tooltip":false
    },
-   "pulseaudio":{
+   "wireplumber":{
       "format":"{icon}&#8239;{volume}",
       "format-muted":"&#8239;Muted",
       "format-icons":{
